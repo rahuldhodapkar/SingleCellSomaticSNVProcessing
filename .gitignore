@@ -1,0 +1,8 @@
+# Editor Artifacts
+.DS_Store
+*.swp
+*.swo
+
+# Heavy Folders
+db
+raw_data
