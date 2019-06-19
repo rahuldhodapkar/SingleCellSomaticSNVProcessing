@@ -1,5 +1,7 @@
 CREATE TABLE variant (
-	"CellName" VARCHAR, 
+	"DonorNum" DECIMAL NOT NULL, /*MOD*/
+	"TissueType" VARCHAR NOT NULL, /*MOD*/
+	"CellName" VARCHAR NOT NULL, /*MOD*/
 	"ChromKey" DECIMAL, 
 	"CHROM" VARCHAR, /*MOD*/ 
 	"POS" DECIMAL, 
@@ -32,7 +34,5 @@ CREATE TABLE variant (
 	"gt_GQ" DECIMAL, 
 	"gt_GT" VARCHAR, 
 	"gt_PL" VARCHAR, /*MOD*/
-	"gt_GT_alleles" VARCHAR, 
-	"DonorNum" DECIMAL, 
-	"DonorType" VARCHAR
+	"gt_GT_alleles" VARCHAR
 );
