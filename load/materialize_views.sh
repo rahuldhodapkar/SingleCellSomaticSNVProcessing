@@ -59,11 +59,11 @@ AS
             'protein_altering_variant',
             'splice_acceptor_variant',
             'splice_donor_variant',
-            'splice_region_variant',
             'start_lost',
             'stop_gained',
             'stop_lost'
-        );
+        )
+        AND "Max. Population Frequency" < 0.05;
 HERE
 
 psql $DB_URI <<HERE
@@ -107,14 +107,14 @@ CREATE INDEX ON hq_deleterious_variant_donor (
 HERE
 
 psql $DB_URI <<HERE
-CREATE MATERIALIZED VIEW cellsum_variants_by_gene
+CREATE MATERIALIZED VIEW variants_by_gene
 AS
     SELECT 
         "Gene",
         "Group",
         "TissueType",
         COUNT(DISTINCT "CellName") as "NumCells",
-        COUNT(DISTINCT "DonorNum") as "NumDonors",
+        COUNT(DISTINCT "DonorNum") as "NumDonors"
     FROM 
         hq_deleterious_variant_donor
     GROUP BY
