@@ -124,6 +124,26 @@ AS
 HERE
 
 
+psql $DB_URI <<HERE
+CREATE MATERIALIZED VIEW all_merged
+AS
+    SELECT * FROM
+      (SELECT * FROM annotation
+        INNER JOIN hq_variant
+        USING
+          ("CHROM", "POS", "REF", "ALT")) as k
+    INNER JOIN
+      donor
+    ON
+      k."DonorNum" = donor."Sample";
+HERE
+
+psql $DB_URI <<HERE
+CREATE INDEX ON all_merged (
+    "Gene",
+    "Top Consequence"
+)
+HERE
 
 
 
