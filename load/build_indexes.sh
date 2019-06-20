@@ -42,3 +42,16 @@ CREATE UNIQUE INDEX
     );
 HERE
 
+echo "===== 'expression' indexes ====="
+
+psql $DB_URI <<HERE
+CREATE UNIQUE INDEX
+    ON expression (
+        "DonorNum",
+        "TissueType",
+        "CellNum",
+        "Gene",
+        "EnsemblGene"
+    );
+HERE
+

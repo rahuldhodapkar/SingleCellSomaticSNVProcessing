@@ -23,3 +23,7 @@ HERE
 psql $DB_URI <<HERE
 \\copy variant FROM '$CUR_DIR/raw_data/merged_vcf_data.csv' DELIMITER ',' CSV HEADER NULL as 'NA'
 HERE
+
+psql $DB_URI <<HERE
+\\copy expression FROM '$CUR_DIR/raw_data/expression.tsv' DELIMITER E'\\t' CSV HEADER NULL as '.'
+HERE
