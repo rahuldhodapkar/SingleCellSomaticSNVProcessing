@@ -54,3 +54,19 @@ INNER JOIN
     donor ON a."DonorNum"=donor."Sample"
 GROUP BY
     "Group";
+
+
+/* Extract all raw variant calls for a specific gene */
+
+SELECT * FROM
+  (SELECT * FROM
+    (SELECT * FROM annotation
+      WHERE
+          "Gene"='GLYCTK') as a
+    INNER JOIN hq_variant
+    USING
+      ("CHROM", "POS", "REF", "ALT")) as k
+INNER JOIN
+  donor
+ON
+  k."DonorNum" = donor."Sample";
