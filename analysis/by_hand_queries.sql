@@ -125,7 +125,9 @@ select "Gene", "DonorNum", "TissueType", "Group",
     from expression_donor_unclean
 group by "Gene", "DonorNum", "TissueType", "Group"
 HAVING
-  "Gene" = 'FOXP3';
+  "Gene" = 'RPL28' AND "TissueType"='B'
+ORDER BY
+  "Group";
 
 /* list all materialized views */
 select schemaname as schema_name,

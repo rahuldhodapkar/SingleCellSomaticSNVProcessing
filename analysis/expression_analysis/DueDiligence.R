@@ -147,6 +147,8 @@ p1 <- DimPlot(fat.treg.combined, reduction = "umap", group.by = "group");
 p2 <- DimPlot(fat.treg.combined, reduction = "umap", label = TRUE);
 plot_grid(p1, p2);
 
+markers.0 <- FindMarkers(fat.treg.combined, ident.1 = 0, ident.2 = 1);
+
 p1 <- DimPlot(fat.treg.combined, reduction = "umap", group.by = "batch")
 p2 <- DimPlot(fat.treg.combined, reduction = "umap", label = TRUE)
 plot_grid(p1, p2)
@@ -159,9 +161,100 @@ p1 <- DimPlot(fat.treg.combined, reduction = "umap", group.by = "sample.id")
 p2 <- DimPlot(fat.treg.combined, reduction = "umap", label = TRUE)
 plot_grid(p1, p2)
 
+# Genes
+
+rownames(treg.combined)[grepl("CCL21", rownames(treg.combined))]
+
+p1 <- FeaturePlot(fat.treg.combined, c("ENSG00000111537-IFNG"))
+p2 <- DimPlot(fat.treg.combined, reduction = "umap", group.by = "group");
+plot_grid(p1, p2);
+
+p1 <- FeaturePlot(fat.treg.combined, c("ENSG00000170345-FOS"))
+p2 <- DimPlot(fat.treg.combined, reduction = "umap", group.by = "group");
+plot_grid(p1, p2);
+
+p1 <- FeaturePlot(fat.treg.combined, c("ENSG00000169429-IL8"))
+p2 <- DimPlot(fat.treg.combined, reduction = "umap", group.by = "group");
+plot_grid(p1, p2);
+
+p1 <- FeaturePlot(fat.treg.combined, c("ENSG00000112486-CCR6"))
+p2 <- DimPlot(fat.treg.combined, reduction = "umap", group.by = "group");
+plot_grid(p1, p2);
+
+p1 <- FeaturePlot(fat.treg.combined, c("ENSG00000161570-CCL5"))
+p2 <- DimPlot(fat.treg.combined, reduction = "umap", group.by = "group");
+plot_grid(p1, p2);
+
+p1 <- FeaturePlot(fat.treg.combined, c("ENSG00000168329-CX3CR1"))
+p2 <- DimPlot(fat.treg.combined, reduction = "umap", group.by = "group");
+plot_grid(p1, p2);
+
+p1 <- FeaturePlot(fat.treg.combined, c("ENSG00000126353-CCR7"))
+p2 <- DimPlot(fat.treg.combined, reduction = "umap", group.by = "group");
+plot_grid(p1, p2);
+
+p1 <- FeaturePlot(fat.treg.combined, c("ENSG00000153563-CD8A"))
+p2 <- DimPlot(fat.treg.combined, reduction = "umap", group.by = "group");
+plot_grid(p1, p2);
+
+p1 <- FeaturePlot(fat.treg.combined, c("ENSG00000010610-CD4"))
+p2 <- DimPlot(fat.treg.combined, reduction = "umap", group.by = "group");
+plot_grid(p1, p2);
+
+p1 <- FeaturePlot(fat.treg.combined, c("ENSG00000167286-CD3D"))
+p2 <- DimPlot(fat.treg.combined, reduction = "umap", group.by = "group");
+plot_grid(p1, p2);
+
+p1 <- FeaturePlot(fat.treg.combined, c("ENSG00000148773-MKI67"))
+p2 <- DimPlot(fat.treg.combined, reduction = "umap", group.by = "group");
+plot_grid(p1, p2);
+
+p1 <- FeaturePlot(fat.treg.combined, c("ENSG00000132646-PCNA"))
+p2 <- DimPlot(fat.treg.combined, reduction = "umap", group.by = "group");
+plot_grid(p1, p2);
+
+p1 <- FeaturePlot(fat.treg.combined, c("ENSG00000128016-ZFP36"))
+p2 <- DimPlot(fat.treg.combined, reduction = "umap", group.by = "group");
+plot_grid(p1, p2);
+
+p1 <- FeaturePlot(fat.treg.combined, c("ENSG00000196154-S100A4"))
+p2 <- DimPlot(fat.treg.combined, reduction = "umap", group.by = "group");
+plot_grid(p1, p2);
+
+# CD45
+p1 <- FeaturePlot(fat.treg.combined, c("ENSG00000179820-MYADM"))
+p2 <- DimPlot(fat.treg.combined, reduction = "umap", group.by = "group");
+plot_grid(p1, p2);
+
+p1 <- FeaturePlot(fat.treg.combined, c("ENSG00000153234-NR4A2"))
+p2 <- DimPlot(fat.treg.combined, reduction = "umap", group.by = "group");
+plot_grid(p1, p2);
+
+p1 <- FeaturePlot(fat.treg.combined, c("ENSG00000271204-RP11-138A9.1"))
+p2 <- DimPlot(fat.treg.combined, reduction = "umap", group.by = "group");
+plot_grid(p1, p2);
+
+p1 <- FeaturePlot(fat.treg.combined, c("ENSG00000049768-FOXP3"))
+p2 <- FeaturePlot(fat.treg.combined, c("ENSG00000134460-IL2RA"))
+p3 <- FeaturePlot(fat.treg.combined, c("ENSG00000168685-IL7R"))
+p4 <- DimPlot(fat.treg.combined, reduction = "umap", group.by = "group");
+plot_grid(p1, p2, p3, p4, ncol = 4)
+
+p1 <- FeaturePlot(fat.treg.combined, c("ENSG00000049768-FOXP3"))
+p2 <- DimPlot(fat.treg.combined, reduction = "umap", group.by = "group");
+plot_grid(p1, p2);
+
+p1 <- FeaturePlot(fat.treg.combined, c("ENSG00000134460-IL2RA"))
+p2 <- DimPlot(fat.treg.combined, reduction = "umap", group.by = "group");
+plot_grid(p1, p2);
+
+p1 <- FeaturePlot(fat.treg.combined, c("ENSG00000168685-IL7R"))
+p2 <- DimPlot(fat.treg.combined, reduction = "umap", group.by = "group");
+plot_grid(p1, p2);
+
 fat.treg.combined[['cell.names']] <- Idents(fat.treg.combined);
 Idents(fat.treg.combined) <- "group"
-fat.diff.group.markers <- FindMarkers(fat.treg.combined, min.diff.pct = 0.25,
+fat.diff.group.markers <- FindMarkers(fat.treg.combined, min.diff.pct = 0.20,
                                       ident.1 = 'HC', ident.2 = 'MS', verbose = F)
 head(fat.diff.group.markers, n=15)
 
@@ -192,6 +285,49 @@ plot_grid(p1, p2)
 p1 <- DimPlot(blood.treg.combined, reduction = "umap", group.by = "sample.id")
 p2 <- DimPlot(blood.treg.combined, reduction = "umap", label = TRUE)
 plot_grid(p1, p2)
+
+p1 <- FeaturePlot(blood.treg.combined, c("ENSG00000049768-FOXP3"))
+p2 <- FeaturePlot(blood.treg.combined, c("ENSG00000134460-IL2RA"))
+p3 <- FeaturePlot(blood.treg.combined, c("ENSG00000168685-IL7R"))
+p4 <- DimPlot(blood.treg.combined, reduction = "umap", group.by = "group");
+plot_grid(p1, p2, p3, p4, ncol = 4)
+
+p1 <- FeaturePlot(blood.treg.combined, c("ENSG00000148773-MKI67"))
+p2 <- DimPlot(blood.treg.combined, reduction = "umap", group.by = "group");
+plot_grid(p1, p2);
+
+p1 <- FeaturePlot(blood.treg.combined, c("ENSG00000128016-ZFP36"))
+p2 <- DimPlot(blood.treg.combined, reduction = "umap", group.by = "group");
+plot_grid(p1, p2);
+
+p1 <- FeaturePlot(blood.treg.combined, c("ENSG00000196154-S100A4"))
+p2 <- DimPlot(blood.treg.combined, reduction = "umap", group.by = "group");
+plot_grid(p1, p2);
+
+# CD45
+p1 <- FeaturePlot(blood.treg.combined, c("ENSG00000179820-MYADM"))
+p2 <- DimPlot(blood.treg.combined, reduction = "umap", group.by = "group");
+plot_grid(p1, p2);
+
+p1 <- FeaturePlot(blood.treg.combined, c("ENSG00000153234-NR4A2"))
+p2 <- DimPlot(blood.treg.combined, reduction = "umap", group.by = "group");
+plot_grid(p1, p2);
+
+p1 <- FeaturePlot(blood.treg.combined, c("ENSG00000271204-RP11-138A9.1"))
+p2 <- DimPlot(blood.treg.combined, reduction = "umap", group.by = "group");
+plot_grid(p1, p2);
+
+p1 <- FeaturePlot(blood.treg.combined, c("ENSG00000049768-FOXP3"))
+p2 <- DimPlot(blood.treg.combined, reduction = "umap", group.by = "group");
+plot_grid(p1, p2);
+
+p1 <- FeaturePlot(blood.treg.combined, c("ENSG00000134460-IL2RA"))
+p2 <- DimPlot(blood.treg.combined, reduction = "umap", group.by = "group");
+plot_grid(p1, p2);
+
+p1 <- FeaturePlot(blood.treg.combined, c("ENSG00000168685-IL7R"))
+p2 <- DimPlot(blood.treg.combined, reduction = "umap", group.by = "group");
+plot_grid(p1, p2);
 
 blood.treg.combined[['cell.names']] <- Idents(blood.treg.combined);
 Idents(blood.treg.combined) <- "group";
