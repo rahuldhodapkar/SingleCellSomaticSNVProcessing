@@ -163,7 +163,7 @@ plot_grid(p1, p2)
 
 # Genes
 
-rownames(treg.combined)[grepl("CCL21", rownames(treg.combined))]
+rownames(treg.combined)[grepl("IL22", rownames(treg.combined))]
 
 p1 <- FeaturePlot(fat.treg.combined, c("ENSG00000111537-IFNG"))
 p2 <- DimPlot(fat.treg.combined, reduction = "umap", group.by = "group");
@@ -181,11 +181,15 @@ p1 <- FeaturePlot(fat.treg.combined, c("ENSG00000112486-CCR6"))
 p2 <- DimPlot(fat.treg.combined, reduction = "umap", group.by = "group");
 plot_grid(p1, p2);
 
-p1 <- FeaturePlot(fat.treg.combined, c("ENSG00000161570-CCL5"))
+p1 <- FeaturePlot(fat.treg.combined, c("ENSG00000232810-TNF"))
 p2 <- DimPlot(fat.treg.combined, reduction = "umap", group.by = "group");
 plot_grid(p1, p2);
 
-p1 <- FeaturePlot(fat.treg.combined, c("ENSG00000168329-CX3CR1"))
+p1 <- FeaturePlot(fat.treg.combined, c("ENSG00000164400-CSF2"))
+p2 <- DimPlot(fat.treg.combined, reduction = "umap", group.by = "group");
+plot_grid(p1, p2);
+
+p1 <- FeaturePlot(fat.treg.combined, c("ENSG00000186810-CXCR3"))
 p2 <- DimPlot(fat.treg.combined, reduction = "umap", group.by = "group");
 plot_grid(p1, p2);
 
@@ -301,11 +305,6 @@ p2 <- DimPlot(blood.treg.combined, reduction = "umap", group.by = "group");
 plot_grid(p1, p2);
 
 p1 <- FeaturePlot(blood.treg.combined, c("ENSG00000196154-S100A4"))
-p2 <- DimPlot(blood.treg.combined, reduction = "umap", group.by = "group");
-plot_grid(p1, p2);
-
-# CD45
-p1 <- FeaturePlot(blood.treg.combined, c("ENSG00000179820-MYADM"))
 p2 <- DimPlot(blood.treg.combined, reduction = "umap", group.by = "group");
 plot_grid(p1, p2);
 
