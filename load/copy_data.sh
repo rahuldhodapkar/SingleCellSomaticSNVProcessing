@@ -8,7 +8,7 @@ set -x
 
 CUR_DIR=`pwd`
 
-DB_URI=postgresql://localhost:5432/ms
+DB_URI=postgresql://localhost:5432/somatic
 
 echo "===== COPY DATA ====="
 

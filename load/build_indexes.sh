@@ -6,7 +6,7 @@
 set -e
 set -x
 
-DB_URI=postgresql://localhost:5432/ms
+DB_URI=postgresql://localhost:5432/somatic
 
 echo "===== 'donor' indexes ====="
 

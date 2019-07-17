@@ -18,4 +18,4 @@ postgres -D $LOCAL_DATA_DIR >$LOCAL_LOG_DIR/db.log 2>&1 &
 # wait for the server to start
 sleep 5
 
-createdb ms
+createdb somatic
